@@ -5,26 +5,26 @@ homelab-iac/
 ├── README.md
 ├── .gitignore
 │
-├── modules/                            # Unchanged — still reusable across everything
+├── modules/                           
 │   ├── networking/
 │   ├── compute/
 │   └── storage/
 │
 ├── aws/
-│   ├── management/                     # NEW — org policies, SCPs, IAM Identity Center
+│   ├── management/                     
 │   │   ├── providers.tf
 │   │   ├── _backend.tf
 │   │   └── org/
 │   │       ├── main.tf
 │   │       └── outputs.tf
 │   │
-│   ├── shared-services/                # NEW — Transit Gateway, shared VPCs, ECR, DNS
+│   ├── shared-services/                
 │   │   ├── providers.tf
 │   │   ├── _backend.tf
 │   │   ├── networking/
 │   │   └── storage/
 │   │
-│   ├── dev/                            # Was aws/ root before, now an account
+│   ├── dev/                           
 │   │   ├── providers.tf
 │   │   ├── _backend.tf
 │   │   ├── terraform.tfvars
@@ -33,7 +33,7 @@ homelab-iac/
 │   │   ├── compute/
 │   │   └── storage/
 │   │
-│   └── prod/                           # NEW account
+│   └── prod/                          
 │       ├── providers.tf
 │       ├── _backend.tf
 │       ├── terraform.tfvars
@@ -43,20 +43,20 @@ homelab-iac/
 │       └── storage/
 │
 ├── azure/
-│   ├── management/                     # NEW — Entra ID, Management Groups, Policies
+│   ├── management/                     
 │   │   ├── providers.tf
 │   │   ├── _backend.tf
 │   │   └── org/
 │   │       ├── main.tf
 │   │       └── outputs.tf
 │   │
-│   ├── shared-services/                # NEW — Hub VNet, Azure Firewall, DNS, ACR
+│   ├── shared-services/               
 │   │   ├── providers.tf
 │   │   ├── _backend.tf
 │   │   ├── networking/
 │   │   └── storage/
 │   │
-│   ├── dev/                            # Was azure/ root before, now a subscription
+│   ├── dev/                           
 │   │   ├── providers.tf
 │   │   ├── _backend.tf
 │   │   ├── terraform.tfvars
@@ -65,7 +65,7 @@ homelab-iac/
 │   │   ├── compute/
 │   │   └── storage/
 │   │
-│   └── prod/                           # NEW subscription
+│   └── prod/                          
 │       ├── providers.tf
 │       ├── _backend.tf
 │       ├── terraform.tfvars
