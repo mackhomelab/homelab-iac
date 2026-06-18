@@ -3,39 +3,79 @@
 ```text
 homelab-iac/
 ├── README.md
+├── CONTRIBUTING.md
 ├── .gitignore
 │
-├── modules/                           
-│   ├── networking/
-│   ├── compute/
-│   └── storage/
+├── modules/
+│   ├── aws/
+│   │   ├── networking/
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   ├── outputs.tf
+│   │   │   └── locals.tf
+│   │   ├── compute/
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   ├── outputs.tf
+│   │   │   └── locals.tf
+│   │   └── storage/
+│   │       ├── main.tf
+│   │       ├── variables.tf
+│   │       ├── outputs.tf
+│   │       └── locals.tf
+│   │
+│   └── azure/
+│       ├── networking/
+│       │   ├── main.tf
+│       │   ├── variables.tf
+│       │   ├── outputs.tf
+│       │   └── locals.tf
+│       ├── compute/
+│       │   ├── main.tf
+│       │   ├── variables.tf
+│       │   ├── outputs.tf
+│       │   └── locals.tf
+│       └── storage/
+│           ├── main.tf
+│           ├── variables.tf
+│           ├── outputs.tf
+│           └── locals.tf
 │
 ├── aws/
-│   ├── management/                     
+│   ├── management/
+│   │   ├── versions.tf
 │   │   ├── providers.tf
-│   │   ├── _backend.tf
+│   │   ├── backend.tf
 │   │   └── org/
 │   │       ├── main.tf
+│   │       ├── variables.tf
 │   │       └── outputs.tf
 │   │
-│   ├── shared-services/                
+│   ├── shared-services/
+│   │   ├── versions.tf
 │   │   ├── providers.tf
-│   │   ├── _backend.tf
+│   │   ├── backend.tf
 │   │   ├── networking/
 │   │   └── storage/
 │   │
-│   ├── dev/                           
+│   ├── dev/
+│   │   ├── versions.tf
 │   │   ├── providers.tf
-│   │   ├── _backend.tf
+│   │   ├── backend.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
 │   │   ├── terraform.tfvars
 │   │   ├── terraform.tfvars.example
 │   │   ├── networking/
 │   │   ├── compute/
 │   │   └── storage/
 │   │
-│   └── prod/                          
+│   └── prod/
+│       ├── versions.tf
 │       ├── providers.tf
-│       ├── _backend.tf
+│       ├── backend.tf
+│       ├── variables.tf
+│       ├── outputs.tf
 │       ├── terraform.tfvars
 │       ├── terraform.tfvars.example
 │       ├── networking/
@@ -43,40 +83,60 @@ homelab-iac/
 │       └── storage/
 │
 ├── azure/
-│   ├── management/                     
+│   ├── management/
+│   │   ├── versions.tf
 │   │   ├── providers.tf
-│   │   ├── _backend.tf
+│   │   ├── backend.tf
 │   │   └── org/
 │   │       ├── main.tf
+│   │       ├── variables.tf
 │   │       └── outputs.tf
 │   │
-│   ├── shared-services/               
+│   ├── shared-services/
+│   │   ├── versions.tf
 │   │   ├── providers.tf
-│   │   ├── _backend.tf
+│   │   ├── backend.tf
 │   │   ├── networking/
 │   │   └── storage/
 │   │
-│   ├── dev/                           
+│   ├── dev/
+│   │   ├── versions.tf
 │   │   ├── providers.tf
-│   │   ├── _backend.tf
+│   │   ├── backend.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
 │   │   ├── terraform.tfvars
 │   │   ├── terraform.tfvars.example
 │   │   ├── networking/
 │   │   ├── compute/
 │   │   └── storage/
 │   │
-│   └── prod/                          
+│   └── prod/
+│       ├── versions.tf
 │       ├── providers.tf
-│       ├── _backend.tf
+│       ├── backend.tf
+│       ├── variables.tf
+│       ├── outputs.tf
 │       ├── terraform.tfvars
 │       ├── terraform.tfvars.example
 │       ├── networking/
 │       ├── compute/
 │       └── storage/
 │
-├── global/                            
+├── global/
 │   ├── dns/
-│   └── secrets/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── secrets/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── vpn/
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── outputs.tf
+│       └── versions.tf
 │
 └── scripts/
     ├── init-all.sh
