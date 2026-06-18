@@ -27,15 +27,14 @@ resource "azurerm_storage_account" "tfstate" {
   account_replication_type        = "LRS"
   allow_nested_items_to_be_public = false
 
+  blob_properties {
+    versioning_enabled = false
+  }
+
   tags = {
     purpose    = "terraform-state"
     managed-by = "terraform-bootstrap"
   }
-}
-
-resource "azurerm_storage_account_blob_properties" "tfstate" {
-  storage_account_id = azurerm_storage_account.tfstate.id
-  versioning_enabled = false
 }
 
 resource "azurerm_storage_container" "tfstate" {
