@@ -43,5 +43,9 @@ terraform.rc
 # Uncomment the line below if you want to ignore planout files.
 # planout
 
+# Exclude Mac system files
 .DS_Store
 **/.DS_Store
+
+# Exclude Claude Code transient data and internal state
+.claude/
